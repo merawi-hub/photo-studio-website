@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Wedding — Yoni Photo Studio</title>
+
+<style>
+  :root{
+    --brand-pink:#ff5ea8;
+    --brand-gold:#ffd35a;
+    --brand-white:#ffffff;
+    --nav-bg:rgba(0,0,0,.45);
+    --bg-url:url("weed.jfif"); /* <-- CHANGE THIS PATH */
+  }
+
+  /* ---- Base / Background ---- */
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color:var(--brand-white);
+    background: var(--bg-url) center / cover no-repeat fixed;
+    overflow-x:hidden;
+    position:relative;
+  }
+  /* soft readable overlay that DOES NOT hide the photo */
+  body::before{
+    content:"";
+    position:fixed; inset:0;
+    background:
+      radial-gradient(1200px 600px at 20% 10%, rgba(0,0,0,.35), transparent 60%),
+      linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.25));
+    pointer-events:none; z-index:0;
+  }
+
+  /* ---- Navbar (always at very top, full width) ---- */
+  .navbar{
+    position:fixed; top:0; left:0; right:0;
+    display:flex; align-items:center; justify-content:space-between;
+    gap:24px;
+    padding:14px 28px;
+    background:var(--nav-bg);
+    backdrop-filter:saturate(140%) blur(6px);
+    z-index:1000;
+  }
+  .brand{
+    font-weight:800; letter-spacing:.5px; font-size:1.15rem;
+    color:#ff6a6a; text-shadow:0 0 6px rgba(255,90,120,.45);
+    animation:brandGlow 3s ease-in-out infinite;
+  }
+  @keyframes brandGlow{
+    0%,100%{ text-shadow:0 0 6px rgba(255,90,120,.45)}
+    50%{ text-shadow:0 0 16px rgba(255,180,200,.9)}
+  }
+
+  .nav-links{display:flex; align-items:center; gap:22px; flex-wrap:wrap}
+  .nav-links a{
+    position:relative;
+    color:var(--brand-white); text-decoration:none; font-weight:600;
+    text-shadow:0 1px 6px rgba(0,0,0,.55);
+    padding:6px 2px;
+  }
+  .nav-links a::after{
+    content:""; position:absolute; left:0; right:0; bottom:-4px; height:2px;
+    background:linear-gradient(90deg,var(--brand-gold),var(--brand-pink));
+    transform:scaleX(0); transform-origin:left; transition:transform .25s ease;
+    border-radius:2px;
+  }
+  .nav-links a:hover::after{ transform:scaleX(1) }
+
+  /* ---- Hero cluster: rings + title ---- */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:grid; place-items:center;
+    padding-top:86px; /* keeps clear of fixed navbar */
+    z-index:1;
+  }
+  .cluster{
+    display:flex; align-items:center; gap:18px;
+    background:rgba(0,0,0,.30);
+    padding:14px 18px; border-radius:16px;
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+    backdrop-filter: blur(4px);
+  }
+  /* Interlocked rings as svg for crisp overlap */
+  .rings{
+    width:120px; height:72px; position:relative;
+  }
+  .rings svg{ overflow:visible; }
+  .rings .ring{
+    fill:none; stroke-width:7.5; filter:drop-shadow(0 2px 6px rgba(0,0,0,.45));
+  }
+  .title{
+    font-weight:800; font-size:2.2rem; letter-spacing:.5px;
+    background:linear-gradient(90deg,var(--brand-gold),var(--brand-pink));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    text-shadow:0 1px 10px rgba(0,0,0,.45);
+    animation:titleHue 6s linear infinite;
+  }
+  @keyframes titleHue{
+    0%{ filter:hue-rotate(0deg) }
+    100%{ filter:hue-rotate(360deg) }
+  }
+
+  /* ---- Romantic ticker slides (doesn't hide BG) ---- */
+  .slides{
+    position:absolute; left:50%; bottom:18vh; transform:translateX(-50%);
+    width:min(900px, 88vw);
+    display:grid; place-items:center; text-align:center;
+    padding:12px 18px;
+    border-radius:14px;
+    background:rgba(0,0,0,.25);
+    backdrop-filter: blur(2px);
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+    font-weight:800; font-size:clamp(1.05rem, 2.6vw, 1.6rem);
+    line-height:1.45;
+  }
+  .slide-line{
+    opacity:0; transform:translateY(12px) scale(.98);
+    animation:slideIn 14s infinite;
+    text-shadow: 0 2px 10px rgba(0,0,0,.55);
+  }
+  .slide-line b{ filter:drop-shadow(0 0 8px rgba(255,255,255,.25)) }
+  .slide-line:nth-child(1){ animation-delay:0s; color:#ffd9ef }
+  .slide-line:nth-child(2){ animation-delay:2.8s; color:#ffe8a6 }
+  .slide-line:nth-child(3){ animation-delay:5.6s; color:#ffc1d9 }
+  .slide-line:nth-child(4){ animation-delay:8.4s; color:#d7fff2 }
+  .slide-line:nth-child(5){ animation-delay:11.2s; color:#ffe1ba }
+
+  @keyframes slideIn{
+    0%{opacity:0; transform:translateY(14px) scale(.98)}
+    6%{opacity:1; transform:translateY(0) scale(1)}
+    20%{opacity:1}
+    26%{opacity:0; transform:translateY(-10px) scale(.98)}
+    100%{opacity:0}
+  }
+
+  /* ---- Floating hearts (many & visible) ---- */
+  .hearts{ position:fixed; inset:0; pointer-events:none; z-index:0 }
+  .heart{
+    position:absolute; bottom:-40px; left:0;
+    font-size:18px; opacity:.85;
+    animation:rise linear forwards;
+    text-shadow:0 2px 10px rgba(0,0,0,.35);
+  }
+  @keyframes rise{
+    0%{ transform:translateY(0) translateX(0) scale(.8); opacity:.15 }
+    10%{ opacity:.9 }
+    100%{ transform:translateY(-110vh) translateX(var(--drift, 0)) scale(1.25); opacity:0 }
+  }
+.advert{
+  background-color: rgb(3, 3, 3);
+  color: white;
+  font-weight: bold;
+
+}
+.yoni weeding{
+  background-color: #000000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: larger;
+  font-weight: bolder;
+  color: red;
+}
+  /* ---- View gallery ---- */
+  .gallery{
+    position:fixed; right:20px; bottom:22px; z-index:10;
+    padding:12px 18px; border:none; border-radius:12px;
+    background:linear-gradient(90deg, var(--brand-pink), #ff8fbf);
+    color:#1b0b14; font-weight:800; cursor:pointer;
+    box-shadow:0 10px 24px rgba(0,0,0,.35);
+    transition: transform .18s ease, filter .18s ease;
+  }
+  .gallery:hover{ transform:translateY(-2px); filter:saturate(120%) }
+
+  /* ---- Responsiveness ---- */
+  @media (max-width:640px){
+    .rings{ width:92px; height:60px }
+    .title{ font-size:1.6rem }
+    .navbar{ padding:12px 16px }
+    .brand{ font-size:1rem }
+    .nav-links{ gap:14px }
+  }
+</style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <header class="navbar" role="navigation" aria-label="Primary">
+    <div class="brand">Yoni Photo Studio</div>
+
+    <!-- Interlocked rings + title also visible in navbar line -->
+    <div class="cluster" style="background:transparent; box-shadow:none; backdrop-filter:none; padding:0">
+      <div class="rings" aria-hidden="true">
+        <!-- Interconnected rings (SVG) -->
+        <svg width="120" height="72" viewBox="0 0 120 72">
+          <!-- left ring -->
+          <circle class="ring" cx="45" cy="36" r="28"
+                  stroke="url(#goldGrad)"/>
+          <!-- right ring overlaps -->
+          <circle class="ring" cx="75" cy="36" r="28"
+                  stroke="url(#pinkGrad)" />
+          <!-- defs for shiny strokes -->
+          <defs>
+            <linearGradient id="goldGrad" x1="0" x2="1">
+              <stop offset="0%" stop-color="#ffef9a"/><stop offset="100%" stop-color="#e2b72f"/>
+            </linearGradient>
+            <linearGradient id="pinkGrad" x1="0" x2="1">
+              <stop offset="0%" stop-color="#ffa8d6"/><stop offset="100%" stop-color="#ff5ea8"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="title" aria-label="Service">Wedding</div>
+    </div>
+
+    <nav class="nav-links">
+      <a href="photo.html">Home</a>
+      <a href="p_about.html">About</a>
+      <a href="p_services.html">Services</a>
+      <a href="p_contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO CENTER -->
+  <main class="hero" role="main">
+    <!-- subtle glass cluster kept to enhance readability while showing BG -->
+    <section class="cluster" aria-label="Intro" style="margin-top:-40px">
+      <div style="font-weight:700; opacity:.9">
+        Capturing your forever with elegance, color, and culture.
+      </div>
+    </section>
+
+    <!-- Romantic ticker slides -->
+    <section class="slides" aria-live="polite">
+      <div class="slide-line">💍 <b>Two souls</b>, one story — forever. ❤️</div>
+      <div class="slide-line">💞 Love in every frame, <b>memories for a lifetime</b>. ✨</div>
+      <div class="slide-line">🌹 From vows to dances — we <b>cherish every detail</b>. 💖</div>
+      <div class="slide-line">💐 Your day, your culture, <b>your timeless beauty</b>. 🕊️</div>
+      <div class="slide-line">✨ A celebration of love — <b>captured artfully</b>. 💗</div>
+    </section>
+  </main>
+<div class="advert" type="text"> <p class="yoni weeding" type="text">Make Your Wedding Unforgettable with Yoni Photo Studio ✨</p>
+
+<ul><li>💍 Two souls, one story — let us capture your magical moments with elegance and creativity.</li>
+<li>📸 From the first smile to the last dance, our professional team ensures every detail is beautifully preserved.</li>
+<li>🌸 Stunning photography • 🎥 Cinematic videography • 🎨 Creative editing</li>
+
+💕 Because your love deserves memories that last forever✨.</ul>
+</div>
+  <!-- Floating hearts -->
+  <div class="hearts" id="hearts" aria-hidden="true"></div>
+
+  <!-- View Gallery -->
+  <button class="gallery" onclick="window.location.href='gallery_wedding.html'">View Gallery</button>
+
+<script>
+  /* ---- Hearts generator: dense, visible, varied ---- */
+  const heartsRoot = document.getElementById('hearts');
+  const heartGlyphs = ["❤️","💖","💞","💗","💕","💘"];
+  const heartColors = ["#ff6aa8","#ff8fbf","#ffd35a","#fff0f6","#ffd9ef","#ffe8a6"];
+
+  function spawnHeart(){
+    const h = document.createElement('div');
+    h.className = 'heart';
+    h.textContent = heartGlyphs[Math.floor(Math.random()*heartGlyphs.length)];
+    const size = 16 + Math.random()*22;
+    h.style.fontSize = size + "px";
+    h.style.left = (Math.random()*98) + "vw";
+    h.style.setProperty('--drift', (Math.random()*140 - 70) + 'px');
+    h.style.color = heartColors[Math.floor(Math.random()*heartColors.length)];
+    const dur = 7 + Math.random()*5;
+    h.style.animationDuration = dur + "s";
+    heartsRoot.appendChild(h);
+    setTimeout(()=>h.remove(), dur*1000 + 200);
+  }
+  // nice density without hurting performance
+  const heartTimer = setInterval(spawnHeart, 220);
+
+  /* ---- Ensure navbar links always fully visible (safety) ---- */
+  // If viewport is very narrow, gently reduce gap so "Contact" never clips
+  const nav = document.querySelector('.nav-links');
+  function adjustNav(){
+    if (window.innerWidth < 420) nav.style.gap = '10px';
+    else if (window.innerWidth < 560) nav.style.gap = '14px';
+    else nav.style.gap = '22px';
+  }
+  addEventListener('resize', adjustNav);
+  adjustNav();
+</script>
+</body>
+</html>

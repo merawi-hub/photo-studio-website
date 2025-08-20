@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Passport Photos - Yoni Photo Studio</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family:'Montserrat',sans-serif;
+      height:100vh;
+      display:flex; flex-direction:column;
+      overflow:hidden;
+      color:#fff;
+      background-color: rgb(0, 0, 0);
+    }
+    /* Background full with animation */
+    .bg-image {
+      position:fixed; top:0; left:0; width:100%; height:100%;
+      background:url('pass.jpg') no-repeat center center;
+      background-size:cover;
+      z-index:-1;
+      animation:kenburns 25s infinite alternate ease-in-out;
+    }
+    body::before {
+      content:""; position:fixed; top:0; left:0; width:100%; height:100%;
+      background:rgba(0, 0, 0, 0.5); /* dark overlay */
+      z-index:-1;
+    }
+    /* Navbar */
+    nav {
+      display:flex; justify-content:space-between; align-items:center;
+      padding:1rem 2rem; position:fixed; top:0; width:100%;
+      z-index:10; background:rgba(0,0,0,0.4); backdrop-filter:blur(10px);
+    }
+    .logo {
+      font-size:1.5rem; font-weight:900;
+      background:linear-gradient(45deg,#ff0066,#ffcc00,#00ffcc,#6600ff);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+      animation:glow 6s infinite linear;
+    }
+    .nav-links a {
+      margin-left:1.5rem; color:#fff; text-decoration:none; font-weight:600;
+      transition:color 0.3s ease;
+    }
+    .nav-links a:hover { color:#ff0066; }
+    /* Hero */
+    .hero {
+      flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center;
+      text-align:center; padding:2rem;
+    }
+    .hero h1 {
+      font-size:3.5rem; font-weight:900;
+      background:linear-gradient(90deg,#ff0066,#ffcc00,#00ffcc,#6600ff);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+      animation:glow 8s infinite linear;
+    }
+    .hero p {
+      max-width:700px; margin-top:1rem; font-size:1.2rem; color:#eee;
+      animation:fadeIn 2s ease;
+    }
+    /* View More */
+    .view-more {
+      position:fixed; bottom:20px; right:20px;
+    }
+    .view-more a {
+      background:#ff0066; padding:0.8rem 1.5rem; border-radius:50px;
+      text-decoration:none; color:#fff; font-weight:700;
+      box-shadow:0 0 20px #ff0066; transition:all 0.3s ease;
+      animation:pulse 2s infinite;
+    }
+    .view-more a:hover { background:#00ffcc; color:#111; transform:scale(1.1); }
+    /* Animations */
+    @keyframes glow {
+      0%{background-position:0% 50%;}
+      50%{background-position:100% 50%;}
+      100%{background-position:0% 50%;}
+    }
+    @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
+    @keyframes pulse {
+      0%{box-shadow:0 0 20px #ff0066;}
+      50%{box-shadow:0 0 40px #ff0066;}
+      100%{box-shadow:0 0 20px #ff0066;}
+    }
+    @keyframes kenburns {
+      0% { transform:scale(1) translate(0,0); }
+      100% { transform:scale(1.15) translate(-2%, -2%); }
+    }
+    .my p{
+      background-color: rgb(92, 91, 91);
+      color: black;
+      font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+     font-weight: bolder ;
+    
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-image"></div>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">Yoni Photo Studio</div>
+    <div class="nav-links">
+      <a href="photo.html">Home</a>
+      <a href="p_about.html">About</a>
+      <a href="p_services.html">Services</a>
+      <a href="p_contact.html">Contact</a>
+    </div>
+  </nav>
+  
+  <!-- Hero -->
+  <div class="hero">
+    <h1>Passport Photos</h1>
+    <p class="my p" type="text">
+      Get your professional passport and ID photos instantly with perfect size, lighting, 
+      and <clarity class="br"></clarity> At Yoni Photo Studio, we make sure your identity photo represents you 
+      at your best while meeting all international requirements.
+    </p>
+  </div>
+  
+  <!-- View More -->
+  <div class="view-more">
+    <a href="gallery.html">View More</a>
+  </div>
+</body>
+</html>

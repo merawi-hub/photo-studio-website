@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yoni Photo Studio - Gallery</title>
+<link rel="stylesheet" href="gallery.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Photo Studio Background Canvas -->
+<canvas id="studio-bg"></canvas>
+
+<header>
+    <h1 class="glow-title">Yoni Photo Studio Gallery</h1>
+    <p>Discover our diverse photography collections!</p>
+</header>
+
+<nav class="category-filter">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="wedding">Weddings</button>
+    <button class="filter-btn" data-filter="passport">Passport/ID</button>
+    <button class="filter-btn" data-filter="family">Family</button>
+    <button class="filter-btn" data-filter="fantasy">Fantasy</button>
+    <button class="filter-btn" data-filter="advertisement">Advertisement</button>
+    <button class="filter-btn" data-filter="birthday">Birthday</button>
+    <button class="filter-btn" data-filter="studio">Studio</button>
+    <button class="filter-btn" data-filter="other">Other Events</button>
+</nav>
+
+<section class="gallery">
+    <!-- Wedding (10) -->
+    <div class="gallery-item wedding"><img src="weed1.jfif" alt="Wedding"></div>
+    <div class="gallery-item wedding"><img src="weed2.jfif" alt="Wedding"></div>
+    <div class="gallery-item wedding"><img src="weed3.jfif" alt="Wedding"></div>
+    <div class="gallery-item wedding"><img src="weed4.jfif" alt="Wedding"></div>
+    <div class="gallery-item wedding"><img src="weed5.jfif" alt="Wedding"></div>
+    <div class="gallery-item wedding"><img src="weed6.jfif" alt="Wedding"></div>
+    <div class="gallery-item wedding"><img src="weed7.jfif" alt="Wedding"></div>
+    <div class="gallery-item wedding"><img src="weed8.jfif" alt="Wedding"></div>
+    <div class="gallery-item wedding"><img src="weed9.jfif" alt="Wedding"></div>
+    <div class="gallery-item wedding"><img src="weed10.jfif" alt="Wedding"></div>
+
+    <!-- Passport/ID (10) -->
+    <div class="gallery-item passport"><img src="https://source.unsplash.com/400x400/?passport,ID,1" alt="Passport"></div>
+    <div class="gallery-item passport"><img src="https://source.unsplash.com/400x400/?passport,ID,2" alt="Passport"></div>
+    <div class="gallery-item passport"><img src="https://source.unsplash.com/400x400/?passport,ID,3" alt="Passport"></div>
+    <div class="gallery-item passport"><img src="https://source.unsplash.com/400x400/?passport,ID,4" alt="Passport"></div>
+    <div class="gallery-item passport"><img src="https://source.unsplash.com/400x400/?passport,ID,5" alt="Passport"></div>
+    <div class="gallery-item passport"><img src="https://source.unsplash.com/400x400/?passport,ID,6" alt="Passport"></div>
+    <div class="gallery-item passport"><img src="https://source.unsplash.com/400x400/?passport,ID,7" alt="Passport"></div>
+    <div class="gallery-item passport"><img src="https://source.unsplash.com/400x400/?passport,ID,8" alt="Passport"></div>
+    <div class="gallery-item passport"><img src="https://source.unsplash.com/400x400/?passport,ID,9" alt="Passport"></div>
+    <div class="gallery-item passport"><img src="https://source.unsplash.com/400x400/?passport,ID,10" alt="Passport"></div>
+
+    <!-- Family (10) -->
+    <div class="gallery-item family"><img src="https://source.unsplash.com/400x400/?family,portrait,1" alt="Family"></div>
+    <div class="gallery-item family"><img src="https://source.unsplash.com/400x400/?family,portrait,2" alt="Family"></div>
+    <div class="gallery-item family"><img src="https://source.unsplash.com/400x400/?family,portrait,3" alt="Family"></div>
+    <div class="gallery-item family"><img src="https://source.unsplash.com/400x400/?family,portrait,4" alt="Family"></div>
+    <div class="gallery-item family"><img src="https://source.unsplash.com/400x400/?family,portrait,5" alt="Family"></div>
+    <div class="gallery-item family"><img src="https://source.unsplash.com/400x400/?family,portrait,6" alt="Family"></div>
+    <div class="gallery-item family"><img src="https://source.unsplash.com/400x400/?family,portrait,7" alt="Family"></div>
+    <div class="gallery-item family"><img src="https://source.unsplash.com/400x400/?family,portrait,8" alt="Family"></div>
+    <div class="gallery-item family"><img src="https://source.unsplash.com/400x400/?family,portrait,9" alt="Family"></div>
+    <div class="gallery-item family"><img src="https://source.unsplash.com/400x400/?family,portrait,10" alt="Family"></div>
+
+    <!-- Fantasy (10) -->
+    <div class="gallery-item fantasy"><img src="https://source.unsplash.com/400x400/?fantasy,creative,1" alt="Fantasy"></div>
+    <div class="gallery-item fantasy"><img src="https://source.unsplash.com/400x400/?fantasy,creative,2" alt="Fantasy"></div>
+    <div class="gallery-item fantasy"><img src="https://source.unsplash.com/400x400/?fantasy,creative,3" alt="Fantasy"></div>
+    <div class="gallery-item fantasy"><img src="https://source.unsplash.com/400x400/?fantasy,creative,4" alt="Fantasy"></div>
+    <div class="gallery-item fantasy"><img src="https://source.unsplash.com/400x400/?fantasy,creative,5" alt="Fantasy"></div>
+    <div class="gallery-item fantasy"><img src="https://source.unsplash.com/400x400/?fantasy,creative,6" alt="Fantasy"></div>
+    <div class="gallery-item fantasy"><img src="https://source.unsplash.com/400x400/?fantasy,creative,7" alt="Fantasy"></div>
+    <div class="gallery-item fantasy"><img src="https://source.unsplash.com/400x400/?fantasy,creative,8" alt="Fantasy"></div>
+    <div class="gallery-item fantasy"><img src="https://source.unsplash.com/400x400/?fantasy,creative,9" alt="Fantasy"></div>
+    <div class="gallery-item fantasy"><img src="https://source.unsplash.com/400x400/?fantasy,creative,10" alt="Fantasy"></div>
+
+    <!-- Advertisement (10) -->
+    <div class="gallery-item advertisement"><img src="https://source.unsplash.com/400x400/?advertisement,commercial,1" alt="Advertisement"></div>
+    <div class="gallery-item advertisement"><img src="https://source.unsplash.com/400x400/?advertisement,commercial,2" alt="Advertisement"></div>
+    <div class="gallery-item advertisement"><img src="https://source.unsplash.com/400x400/?advertisement,commercial,3" alt="Advertisement"></div>
+    <div class="gallery-item advertisement"><img src="https://source.unsplash.com/400x400/?advertisement,commercial,4" alt="Advertisement"></div>
+    <div class="gallery-item advertisement"><img src="https://source.unsplash.com/400x400/?advertisement,commercial,5" alt="Advertisement"></div>
+    <div class="gallery-item advertisement"><img src="https://source.unsplash.com/400x400/?advertisement,commercial,6" alt="Advertisement"></div>
+    <div class="gallery-item advertisement"><img src="https://source.unsplash.com/400x400/?advertisement,commercial,7" alt="Advertisement"></div>
+    <div class="gallery-item advertisement"><img src="https://source.unsplash.com/400x400/?advertisement,commercial,8" alt="Advertisement"></div>
+    <div class="gallery-item advertisement"><img src="https://source.unsplash.com/400x400/?advertisement,commercial,9" alt="Advertisement"></div>
+    <div class="gallery-item advertisement"><img src="https://source.unsplash.com/400x400/?advertisement,commercial,10" alt="Advertisement"></div>
+
+    <!-- Birthday (10) -->
+    <div class="gallery-item birthday"><img src="https://source.unsplash.com/400x400/?birthday,party,1" alt="Birthday"></div>
+    <div class="gallery-item birthday"><img src="https://source.unsplash.com/400x400/?birthday,party,2" alt="Birthday"></div>
+    <div class="gallery-item birthday"><img src="https://source.unsplash.com/400x400/?birthday,party,3" alt="Birthday"></div>
+    <div class="gallery-item birthday"><img src="https://source.unsplash.com/400x400/?birthday,party,4" alt="Birthday"></div>
+    <div class="gallery-item birthday"><img src="https://source.unsplash.com/400x400/?birthday,party,5" alt="Birthday"></div>
+    <div class="gallery-item birthday"><img src="https://source.unsplash.com/400x400/?birthday,party,6" alt="Birthday"></div>
+    <div class="gallery-item birthday"><img src="https://source.unsplash.com/400x400/?birthday,party,7" alt="Birthday"></div>
+    <div class="gallery-item birthday"><img src="https://source.unsplash.com/400x400/?birthday,party,8" alt="Birthday"></div>
+    <div class="gallery-item birthday"><img src="https://source.unsplash.com/400x400/?birthday,party,9" alt="Birthday"></div>
+    <div class="gallery-item birthday"><img src="https://source.unsplash.com/400x400/?birthday,party,10" alt="Birthday"></div>
+
+    <!-- Studio (10) -->
+    <div class="gallery-item studio"><img src="https://source.unsplash.com/400x400/?studio,photography,1" alt="Studio"></div>
+    <div class="gallery-item studio"><img src="https://source.unsplash.com/400x400/?studio,photography,2" alt="Studio"></div>
+    <div class="gallery-item studio"><img src="https://source.unsplash.com/400x400/?studio,photography,3" alt="Studio"></div>
+    <div class="gallery-item studio"><img src="https://source.unsplash.com/400x400/?studio,photography,4" alt="Studio"></div>
+    <div class="gallery-item studio"><img src="https://source.unsplash.com/400x400/?studio,photography,5" alt="Studio"></div>
+    <div class="gallery-item studio"><img src="https://source.unsplash.com/400x400/?studio,photography,6" alt="Studio"></div>
+    <div class="gallery-item studio"><img src="https://source.unsplash.com/400x400/?studio,photography,7" alt="Studio"></div>
+    <div class="gallery-item studio"><img src="https://source.unsplash.com/400x400/?studio,photography,8" alt="Studio"></div>
+    <div class="gallery-item studio"><img src="https://source.unsplash.com/400x400/?studio,photography,9" alt="Studio"></div>
+    <div class="gallery-item studio"><img src="https://source.unsplash.com/400x400/?studio,photography,10" alt="Studio"></div>
+
+    <!-- Other Events (10) -->
+    <div class="gallery-item other"><img src="https://source.unsplash.com/400x400/?event,celebration,1" alt="Other"></div>
+    <div class="gallery-item other"><img src="https://source.unsplash.com/400x400/?event,celebration,2" alt="Other"></div>
+    <div class="gallery-item other"><img src="https://source.unsplash.com/400x400/?event,celebration,3" alt="Other"></div>
+    <div class="gallery-item other"><img src="https://source.unsplash.com/400x400/?event,celebration,4" alt="Other"></div>
+    <div class="gallery-item other"><img src="https://source.unsplash.com/400x400/?event,celebration,5" alt="Other"></div>
+    <div class="gallery-item other"><img src="https://source.unsplash.com/400x400/?event,celebration,6" alt="Other"></div>
+    <div class="gallery-item other"><img src="https://source.unsplash.com/400x400/?event,celebration,7" alt="Other"></div>
+    <div class="gallery-item other"><img src="https://source.unsplash.com/400x400/?event,celebration,8" alt="Other"></div>
+    <div class="gallery-item other"><img src="https://source.unsplash.com/400x400/?event,celebration,9" alt="Other"></div>
+    <div class="gallery-item other"><img src="https://source.unsplash.com/400x400/?event,celebration,10" alt="Other"></div>
+</section>
+
+<div class="view-more">
+    <a href="../js_code/p_contact.html" class="btn">Contact Us</a>
+</div>
+
+<div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-img" src="" alt="Full Photo">
+</div>
+
+<script src="gallery.js"></script>
+</body>
+</html>

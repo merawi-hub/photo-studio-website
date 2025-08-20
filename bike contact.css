@@ -1,0 +1,36 @@
+@import url('home.css');
+
+.hero { height: 40vh; background: url('contact-bg.jpg') no-repeat center/cover; position: relative; }
+.hero .overlay { background: rgba(0,0,0,0.6); position: absolute; width:100%; height:100%; }
+
+.contact-form {
+  background: #111;
+  padding: 60px 20px;
+  text-align: center;
+}
+.contact-form h3 { color: #FFD700; margin-bottom: 20px; }
+form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+form input, form textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+}
+form button {
+  background: #FFD700;
+  border: none;
+  padding: 12px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+form button:hover { background: orange; }
+
+.map { padding: 40px; text-align: center; background: #222; }
+.map h3 { color: #FFD700; margin-bottom: 15px; }

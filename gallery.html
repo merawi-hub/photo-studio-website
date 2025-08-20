@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yoni Photo Studio - Gallery</title>
+<link rel="stylesheet" href="gallery.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Photo Studio Background Canvas -->
+<canvas id="studio-bg"></canvas>
+
+<header>
+    <h1 class="glow-title">Yoni Photo Studio Gallery</h1>
+    <p>Discover our diverse photography collections!</p>
+</header>
+
+<nav class="category-filter">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="wedding">Wedding</button>
+    <button class="filter-btn" data-filter="passport">Passport/ID</button>
+    <button class="filter-btn" data-filter="graduation">Graduation</button>
+    <button class="filter-btn" data-filter="family">Family</button>
+    <button class="filter-btn" data-filter="fantasy">Fantasy</button>
+    <button class="filter-btn" data-filter="advertisement">Advertisement</button>
+    <button class="filter-btn" data-filter="birthday">Birthday</button>
+    <button class="filter-btn" data-filter="studio">Studio</button>
+    <button class="filter-btn" data-filter="other">Outdoor Events</button>
+</nav>
+
+<section class="gallery">
+    <!-- Wedding (10) -->
+    <div class="gallery-item wedding"><img src="weed1.jfif" alt="Wedding"></div>
+    <div class="gallery-item wedding"><img src="weed2.jfif" alt="Wedding"></div>
+    <div class="gallery-item wedding"><img src="weed3.jfif" alt="Wedding"></div>
+    <div class="gallery-item wedding"><img src="weed4.jfif" alt="Wedding"></div>
+    <div class="gallery-item wedding"><img src="weed5.jfif" alt="Wedding"></div>
+    <div class="gallery-item wedding"><img src="weed6.jfif" alt="Wedding"></div>
+    <div class="gallery-item wedding"><img src="weed7.jfif" alt="Wedding"></div>
+    <div class="gallery-item wedding"><img src="weed8.jfif" alt="Wedding"></div>
+    <div class="gallery-item wedding"><img src="weed9.jfif" alt="Wedding"></div>
+    <div class="gallery-item wedding"><img src="weed10.jfif" alt="Wedding"></div>
+
+    <!-- Passport/ID (10) -->
+    <div class="gallery-item passport"><img src="id1.jfif" alt="Passport"></div>
+    <div class="gallery-item passport"><img src="id2.jfif" alt="Passport"></div>
+    <div class="gallery-item passport"><img src="id3.jfif" alt="Passport"></div>
+    <div class="gallery-item passport"><img src="id4.jfif" alt="Passport"></div>
+    <div class="gallery-item passport"><img src="id5.png" alt="Passport"></div>
+    <div class="gallery-item passport"><img src="id6.png" alt="Passport"></div>
+    <div class="gallery-item passport"><img src="id7.png" alt="Passport"></div>
+    <div class="gallery-item passport"><img src="id8.png" alt="Passport"></div>
+    <div class="gallery-item passport"><img src="id9.png" alt="Passport"></div>
+    <div class="gallery-item passport"><img src="id10.png" alt="Passport"></div>
+
+    <!-- Family (10) -->
+    <div class="gallery-item family"><img src="fam1.____" alt="Family"></div>
+    <div class="gallery-item family"><img src="fam10.jfif" alt="Family"></div>
+    <div class="gallery-item family"><img src="fam2.jfif" alt="Family"></div>
+    <div class="gallery-item family"><img src="fam9.jfif" alt="Family"></div>
+    <div class="gallery-item family"><img src="fam3.jfif" alt="Family"></div>
+    <div class="gallery-item family"><img src="fam8.jfif" alt="Family"></div>
+    <div class="gallery-item family"><img src="fam4.jfif" alt="Family"></div>
+    <div class="gallery-item family"><img src="fam7.jfif" alt="Family"></div>
+    <div class="gallery-item family"><img src="fam5.jfif" alt="Family"></div>
+    <div class="gallery-item family"><img src="fam6.png" alt="Family"></div>
+
+    <!-- Fantasy (10) -->
+    <div class="gallery-item fantasy"><img src="fan1.jfif" alt="Fantasy"></div>
+    <div class="gallery-item fantasy"><img src="fan2.jfif" alt="Fantasy"></div>
+    <div class="gallery-item fantasy"><img src="fan3.jfif" alt="Fantasy"></div>
+    <div class="gallery-item fantasy"><img src="fan4.jfif" alt="Fantasy"></div>
+    <div class="gallery-item fantasy"><img src="fan5.jfif" alt="Fantasy"></div>
+    <div class="gallery-item fantasy"><img src="fan6.jfif" alt="Fantasy"></div>
+    <div class="gallery-item fantasy"><img src="fan7.jfif" alt="Fantasy"></div>
+    <div class="gallery-item fantasy"><img src="fan8.jfif" alt="Fantasy"></div>
+    <div class="gallery-item fantasy"><img src="fan9.jfif" alt="Fantasy"></div>
+    <div class="gallery-item fantasy"><img src="fan10.jfif" alt="Fantasy"></div>
+
+    <!-- Advertisement (10) -->
+    <div class="gallery-item advertisement"><img src="adv1.jfif" alt="Advertisement"></div>
+    <div class="gallery-item advertisement"><img src="adv2.jfif" alt="Advertisement"></div>
+    <div class="gallery-item advertisement"><img src="adv3.jfif" alt="Advertisement"></div>
+    <div class="gallery-item advertisement"><img src="adv4.jfif" alt="Advertisement"></div>
+    <div class="gallery-item advertisement"><img src="adv5.jfif" alt="Advertisement"></div>
+    <div class="gallery-item advertisement"><img src="adv6.jfif" alt="Advertisement"></div>
+    <div class="gallery-item advertisement"><img src="adv7.jfif" alt="Advertisement"></div>
+    <div class="gallery-item advertisement"><img src="adv8.jfif" alt="Advertisement"></div>
+    <div class="gallery-item advertisement"><img src="adv9.jfif" alt="Advertisement"></div>
+    <div class="gallery-item advertisement"><img src="adv10.jfif" alt="Advertisement"></div>
+
+    <!-- Birthday (10) -->
+    <div class="gallery-item birthday"><img src="bd1.jfif" alt="Birthday"></div>
+    <div class="gallery-item birthday"><img src="bd2.jfif" alt="Birthday"></div>
+    <div class="gallery-item birthday"><img src="bd3.jfif" alt="Birthday"></div>
+    <div class="gallery-item birthday"><img src="bd4.jfif" alt="Birthday"></div>
+    <div class="gallery-item birthday"><img src="bd5.jfif" alt="Birthday"></div>
+    <div class="gallery-item birthday"><img src="bd6.__📸 Whether it’s half birthday or first birthday, a sweet sixteen, or a fabulous milestone year, we’re here to turn your party into___" alt="Birthday"></div>
+    <div class="gallery-item birthday"><img src="bd7.jfif" alt="Birthday"></div>
+    <div class="gallery-item birthday"><img src="bd8.jfif" alt="Birthday"></div>
+    <div class="gallery-item birthday"><img src="bd9.jfif" alt="Birthday"></div>
+    <div class="gallery-item birthday"><img src="bd10.jfif" alt="Birthday"></div>
+
+        <!-- graduation photos gallery-->
+    <div class="gallery-item graduation"><img src="graduate1.png" alt="graduation"></div>
+    <div class="gallery-item graduation"><img src="graduate2.png" alt="graduation"></div>
+    <div class="gallery-item graduation"><img src="graduate11.jfif" alt="graduation"></div>
+    <div class="gallery-item graduation"><img src="graduate4.png" alt="graduation"></div>
+    <div class="gallery-item graduation"><img src="graduation5.png" alt="graduation"></div>
+    <div class="gallery-item graduation"><img src="graduate10.jfif" alt="graduation"></div>
+    <div class="gallery-item graduation"><img src="graduate7.jfif" alt="graduation"></div>
+    <div class="gallery-item graduation"><img src="graduation6.png" alt="graduation"></div>
+    <div class="gallery-item graduation"><img src="graduate9.jfif" alt="graduation"></div>
+    <div class="gallery-item graduation"><img src="graduate8.jfif" alt="graduation"></div>
+    <div class="gallery-item graduation"><img src="graduate3.png" alt="graduation"></div>
+
+    <!-- Studio (10) -->
+    <div class="gallery-item studio"><img src="stud1.jfif" alt="Studio"></div>
+    <div class="gallery-item studio"><img src="stud2.jfif" alt="Studio"></div>
+    <div class="gallery-item studio"><img src="studio.jfif" alt="Studio"></div>
+    <div class="gallery-item studio"><img src="stud4.jfif" alt="Studio"></div>
+    <div class="gallery-item studio"><img src="stud5.jfif" alt="Studio"></div>
+    <div class="gallery-item studio"><img src="stud6. _ Instagram" alt="Studio"></div>
+    <div class="gallery-item studio"><img src="stud7.jfif" alt="Studio"></div>
+    <div class="gallery-item studio"><img src="stud8.jfif" alt="Studio"></div>
+    <div class="gallery-item studio"><img src="stud9.jfif" alt="Studio"></div>
+    <div class="gallery-item studio"><img src="stud10.jfif" alt="Studio"></div>
+
+    <!-- Other Events (10) -->
+    <div class="gallery-item other"><img src="event1.jfif" alt="Other"></div>
+    <div class="gallery-item other"><img src="event2.jfif" alt="Other"></div>
+    <div class="gallery-item other"><img src="event3.jfif" alt="Other"></div>
+    <div class="gallery-item other"><img src="event4.jfif" alt="Other"></div>
+    <div class="gallery-item other"><img src="event5.jfif" alt="Other"></div>
+    <div class="gallery-item other"><img src="event6.jfif" alt="Other"></div>
+    <div class="gallery-item other"><img src="event7.jfif" alt="Other"></div>
+    <div class="gallery-item other"><img src="event8.jfif" alt="Other"></div>
+    <div class="gallery-item other"><img src="event9.jfif" alt="Other"></div>
+    <div class="gallery-item other"><img src="event10.jfif" alt="Other"></div>
+    <div class="gallery-item other"><img src="event11.jfif" alt="Other"></div>
+    <div class="gallery-item other"><img src="event12.jfif" alt="Other"></div>
+    <div class="gallery-item other"><img src="event13.jfif" alt="Other"></div>
+    <div class="gallery-item other"><img src="event14" alt="Other"></div>
+    <div class="gallery-item other"><img src="event15.jfif" alt="Other"></div>
+</section>
+
+<div class="view-more">
+    <a href="p_contact.html" class="btn">Contact Us</a>
+</div>
+
+<div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-img" src="" alt="Full Photo">
+</div>
+
+<script src="gallery.js"></script>
+</body>
+</html>

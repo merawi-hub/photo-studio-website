@@ -1,0 +1,63 @@
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;height:100vh;overflow:hidden;color:#fff;position:relative;transition:background 0.5s,color 0.5s;}
+body.light{color:#111;}
+.bg-image{position:fixed;top:0;left:0;width:100%;height:100%;
+background:url('about.jfif') no-repeat center center;
+background-size:cover;z-index:-1;animation:kenburns 30s infinite alternate;transition:filter 0.5s;}
+body.light .bg-image{filter:brightness(1.1);}
+body::before{content:"";position:fixed;top:0;left:0;width:100%;height:100%;
+background:rgba(0,0,0,0.4);z-index:-1;}
+body.light::before{background:rgba(255,255,255,0.2);}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;
+position:fixed;top:0;width:100%;z-index:10;background:rgba(0,0,0,0.35);backdrop-filter:blur(8px);}
+body.light nav{background:rgba(255,255,255,0.25);}
+.logo{font-size:1.8rem;font-weight:900;background:linear-gradient(270deg,#ff0000,#ff9900,#00ffcc,#6600ff,#ff00cc);
+background-size:600% 600%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+animation:rainbowGlow 10s ease infinite;}
+.nav-links a{margin-left:1.5rem;color:#fff;text-decoration:none;font-weight:600;transition:color .3s;}
+.nav-links a:hover,.nav-links a.active{color:#ffcc00;}
+.toggle-btn{margin-left:1.5rem;padding:.5rem 1rem;border:none;background:none;color:#fff;font-size:1.2rem;cursor:pointer;transition:transform .3s;}
+.toggle-btn:hover{transform:scale(1.2);}
+body.light .toggle-btn{color:#111;}
+
+/* HERO TEXT CENTERED */
+.hero{
+    height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 6rem 5rem;
+    animation: fadeIn 2s ease;
+}
+
+.hero h1{font-size:4rem;font-weight:900;background:linear-gradient(90deg,#ffcc00,#ff0066,#00ffcc,#6600ff);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:glow 8s infinite;}
+.hero p{max-width:800px;margin-top:1.5rem;font-size:1.25rem;line-height:1.8;color:white;}
+body.light .hero p{color:#111;}
+
+/* BUTTONS SIDE BY SIDE */
+.bottom-buttons{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.btn{padding:1rem 2rem;font-weight:700;border-radius:50px;text-decoration:none;transition:all .3s;box-shadow:0 0 20px rgba(255,255,255,0.5);}
+.green{background:#00ff00;color:#111;animation:glowButtonGreen 3s infinite;}
+.yellow{background:#ffcc00;color:#111;animation:glowButtonYellow 3s infinite;}
+.dual{background:linear-gradient(45deg,#ff0066,#00ffcc);color:#fff;animation:glowButtonDual 3s infinite;}
+.btn:hover{transform:scale(1.1);box-shadow:0 0 35px rgba(255,255,255,0.8);}
+
+/* ANIMATIONS */
+@keyframes kenburns{0%{transform:scale(1);}100%{transform:scale(1.12) translate(-1%,-1%);}}
+@keyframes fadeIn{0%{opacity:0;}100%{opacity:1;}}
+@keyframes glow{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+@keyframes rainbowGlow{0%{background-position:0% 50%}25%{background-position:50% 50%}50%{background-position:100% 50%}75%{background-position:50% 50%}100%{background-position:0% 50%}}
+@keyframes glowButtonGreen{0%,100%{box-shadow:0 0 20px #00ff00;}50%{box-shadow:0 0 40px #00ff00;}}
+@keyframes glowButtonYellow{0%,100%{box-shadow:0 0 20px #ffcc00;}50%{box-shadow:0 0 40px #ffcc00;}}
+@keyframes glowButtonDual{0%,100%{box-shadow:0 0 20px #ff0066,#00ffcc;}50%{box-shadow:0 0 40px #ff0066,#00ffcc;}}

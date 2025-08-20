@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advertisement Photography - Yoni Photo Studio</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;height:100vh;overflow:hidden;color:#fff;}
+.bg-image{position:fixed;top:0;left:0;width:100%;height:100%;
+background:url('promotion.png') no-repeat center center;
+background-size:cover;z-index:-1;animation:kenburns 28s infinite alternate;}
+body::before{content:"";position:fixed;top:0;left:0;width:100%;height:100%;
+background:rgba(0,0,0,0.5);z-index:-1;}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;
+position:fixed;top:0;width:100%;z-index:10;background:rgba(0,0,0,0.4);backdrop-filter:blur(10px);}
+.logo{font-size:1.5rem;font-weight:900;background:linear-gradient(45deg,#ff0066,#ffcc00,#00ffcc,#6600ff);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:glow 6s infinite;}
+.nav-links a{margin-left:1.5rem;color:#fff;text-decoration:none;font-weight:600;transition:color .3s;}
+.nav-links a:hover{color:#00ffcc;}
+.hero{height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:2rem;}
+.hero h1{font-size:3.5rem;font-weight:900;background:linear-gradient(90deg,#ffcc00,#ff0066,#00ffcc,#6600ff);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:glow 8s infinite;}
+.hero p{max-width:850px;margin-top:1rem;font-size:1.4rem;line-height:1.9;color:rgb(234, 13, 138);animation:fadeIn 2s ease;}
+.visit-gallery{position:fixed;bottom:20px;right:20px;}
+.visit-gallery a{background:#ffcc00;padding:.8rem 1.5rem;border-radius:50px;text-decoration:none;
+color:#111;font-weight:700;box-shadow:0 0 20px #ffcc00;transition:all .3s;animation:pulse 2s infinite;}
+.visit-gallery a:hover{background:#00ffcc;color:#111;transform:scale(1.1);}
+@keyframes glow{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes pulse{0%{box-shadow:0 0 20px #ffcc00;}50%{box-shadow:0 0 40px #ffcc00;}100%{box-shadow:0 0 20px #ffcc00;}}
+@keyframes kenburns{0%{transform:scale(1);}100%{transform:scale(1.18) translate(-2%,-2%);}}
+</style>
+</head>
+<body>
+<div class="bg-image"></div>
+<nav>
+<div class="logo">Yoni Photo Studio</div>
+<div class="nav-links">
+<a href="photo.html">Home</a>
+<a href="p_about.html">About</a>
+<a href="p_services.html">Services</a>
+<a href="p_contact.html">Contact</a>
+</div>
+</nav>
+<div class="hero">
+<h1>Advertisement Photography</h1>
+<p>
+Promote your brand with impactful visuals.<br/> <br/><strong>Yoni Photo Studio</strong> provides professional advertisement photography 
+designed to capture attention and communicate your message effectively. From product shoots, lifestyle campaigns, 
+to commercial portraits, we use creative lighting, angles, and composition to highlight your products or services, 
+helping your brand stand out in a competitive market.
+</p>
+</div>
+<div class="visit-gallery">
+<a href="gallery.html">Visit Gallery</a>
+</div>
+</body>
+</html>
